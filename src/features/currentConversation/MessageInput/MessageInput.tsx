@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { EmojiInput } from "features/emoji/EmojiInput/EmojiInput";
+import { FileUpload } from "features/fileUpload/FileUpload/FileUpload" 
 import { EmojiSuggestion } from "features/emoji/EmojiSuggestion/EmojiSuggestion";
 import { Wrapper, Container, TextArea } from "./MessageInput.style";
 import { sendMessageAction } from "features/messages/sendMessageCommand";
@@ -85,6 +86,7 @@ const MessageInput = () => {
           onKeyPress={handleKeyPress}
           placeholder="Type Message"
         />
+        <FileUpload />
         <EmojiInput
           value={message}
           onSelection={messageWithEmoji => {

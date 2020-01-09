@@ -6,7 +6,7 @@ import { getCurrentConversationId } from "../currentConversationModel";
 import { getUsersById } from "features/users/userModel";
 import { getMessagesById } from "features/messages/messageModel";
 import { Wrapper } from "./MessageList.style";
-import WelcomeMessage from "./WelcomeMessage";
+//import WelcomeMessage from "./WelcomeMessage";
 
 /**
  * Create a selector that that returns the list of messages in the currentConversation joined
@@ -93,6 +93,8 @@ const MessageList = () => {
   const hasReachedBottom = el.scrollHeight - el.clientHeight === el.scrollTop;
 
   useEffect(() => {
+    console.log('Got a new Message, here are the details: ');
+    console.log(messages);
     if (hasReachedBottom) {
       scrollToBottom();
     }
@@ -104,7 +106,7 @@ const MessageList = () => {
 
   return (
     <Wrapper ref={wrapper} onScroll={handleScroll}>
-      <WelcomeMessage />
+      {/* <WelcomeMessage /> */}
       {messages.map(message => (
         <Message message={message} key={message.timetoken} />
       ))}
