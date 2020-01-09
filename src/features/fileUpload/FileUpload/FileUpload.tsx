@@ -13,7 +13,7 @@ import "uppload/dist/themes/light.css";
 
 
 const FileUpload = () => {
-    const fileStackClient = filestack.init('AZhkqr7bURreG9fD8oCWxz');
+    const fileStackClient = filestack.init('KeyGoesHere');
     const dispatch = useDispatch();
 
     const toggleImageUploadBox = () => {
