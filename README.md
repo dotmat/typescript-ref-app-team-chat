@@ -4,19 +4,24 @@
 
 This repository contains the code for the Team Chat web reference application hosted on the [PubNub Chat Docs Page](https://www.pubnub.com/docs/chat/quickstart#quickstart). You can download the project to run on your local machine, and explore the code to see how we built it.
 
+This branch of the code showcases how to use [FileStack](https://www.filestack.com) to upload images and trasmit them via PubNub Chat.
+
 ![alt text](team-chat-preview.png "Reference App")
 
-The application demonstrates how to build a chat application using:
+The fork focuses on the image uploading portion of chat:
 
 - PubNub
 - TypeScript
 - React
 - Redux
+- FileStack
 
 ## Requirements
 
 - [Node.js](https://nodejs.org/en/)
 - [PubNub Account](#pubnub-account) (*Free*)
+- [FileStack Account](https://dev.filestack.com/signup/free/) (*Free*)
+
 
 ## PubNub Account
 
@@ -41,7 +46,13 @@ To run this application you must obtain publish and subscribe keys from your Pub
 1. Clone the GitHub repository.
 
     ```bash
-    git clone git@github.com:pubnub/typescript-ref-app-team-chat.git
+    git clone git@github.com:dotmat/typescript-ref-app-team-chat.git
+    ```
+    
+1. Add your FileStack API key to the file: 
+    ``` bash
+    /fileUpload/FileUpload/FileUpload.tsx
+    fileStackClient = filestack.init('Put Your API Key Here');
     ```
 
 1. Install the project.
@@ -60,6 +71,8 @@ To run this application you must obtain publish and subscribe keys from your Pub
     A web browser should automatically open [http://localhost:3000](http://localhost:3000), and you can explore your very own Team Chat app!
 
 ## Further Information
+
+This demo uses FileStack as the storage medium, however you could use any file uploading service sush as S3, Cloudinary, etc. These services host the file and use PubNub to transmit the Image URL's between users. 
 
 Visit the [PubNub Chat Docs](https://www.pubnub.com/docs/chat) page for more information about how to use the React and Redux SDKs to add in-app chat to your applications.
 
