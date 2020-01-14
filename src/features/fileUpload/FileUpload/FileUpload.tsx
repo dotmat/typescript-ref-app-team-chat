@@ -13,12 +13,18 @@ import "uppload/dist/themes/light.css";
 
 
 const FileUpload = () => {
-    const fileStackClient = filestack.init('KeyGoesHere');
+    const fileStackClient = filestack.init('Put Your API Key Here');
     const dispatch = useDispatch();
 
     const toggleImageUploadBox = () => {
         console.log('Loading Upload File Widget');
+
+        // Put your Cloudinary Widget Here
+
+        // Put your S3 Widget here.
         
+        // This code is for the default FileStack Widget.
+        // If you do use another upload service, please remember to comment out the function below.
         console.log('Loading FileStack Widget');
         const fileStackOptions = {
             maxFiles: 1,
